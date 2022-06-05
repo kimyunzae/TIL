@@ -1,0 +1,116 @@
+<meta charset="UTF-8">
+
+<style>
+	body {
+		background: gray;
+		color: black;
+	}
+	
+	#phonenum {
+		margin-top: 30px;
+		margin-bottom: 30px;
+	}
+	
+	#n1 {
+		width: 80px;
+	}
+	
+</style>
+
+<script>
+
+/*
+- 회원가입 폼을 만든다. 
+- checkbox 제외. 
+- AJAX ID 체크. 
+- 각 필드 validation 
+- 서버로 Form 데이터 전송 
+- 완료 화면 출력
+*/
+
+function checkid(id) {
+	$.ajax({
+		url:'checkid',
+		data:{'id':id},
+		success: function(data) {
+			if(data == '1') {
+				$('#iid').text('사용가능 합니다');
+			} else {
+				$('#iid').text('사용 불가능 합니다');
+			}
+		}
+	});
+};
+
+$(document).ready(function(){	
+	
+	$('#n1').val('010');
+	$('#n1').attr('disabled', 'disabled');
+	
+	$('button').attr('disabled','disabled');
+	
+	$('button').click(function() {
+		$('#register_form').attr({
+			'action':'register_formimpl',
+			'method':'post'
+		});
+		
+		$('#register_form').submit(); 
+		
+	});
+	
+	$('input[name="id"]').keyup(function(){
+		var id = $(this).val();
+		// 길이가 3자리 미만이면 span에 "3자리 이상이어야 합니다." 출력 
+		if(id.length < 3) {
+			$('#iid').text('3자리 이상이어야 합니다');
+		} else {
+			$('#iid').text('');
+			checkid(id);
+		} 
+	})
+	
+	$('input[name="pwd2"]').keyup(function(){
+		var pwd = $('input[name="pwd"]').val();
+		var pwd2 = $('input[name="pwd2"]').val();	//this 써도됨 
+		if(pwd == pwd2) {
+			$('#spwd2').text('일치 합니다');
+			$('button').removeAttr('disabled');
+		}
+	});
+});
+	
+</script>
+
+<div class="container col-sm-6">
+	<h1>Register</h1>
+	<form id="register_form">
+		<div class="form-group">
+			<label>Name:</label> <input type="text" name="id"
+				class="form-control" placeholder="Input Name"><span id="iid"></span>
+		</div>
+		<div class="form-group">
+			<label>Password:</label> <input type="password" name="pwd"
+				class="form-control" placeholder="Input Password">
+			<span id="spwd"></span>
+		</div>
+		<div class="form-group">
+			<label>Confirm Password:</label><input type="password" name="pwd2"
+				class="form-control" placeholder="Input Password">
+			 <span id="spwd2"></span>
+		</div>	
+		
+		<div id="phonenum">
+			<label>Phone number:</label>
+			<div>
+				<input name="n1" type="number" id="n1" maxlength="7"> - <input type="number" id="n2">
+			</div>
+		</div>
+		
+		<button id="register_bt" type="button" class="btn btn-success">REGISTER</button>
+	</form>
+</div>
+
+
+
+

@@ -1,0 +1,153 @@
+@charset "UTF-8";
+
+
+#logo {
+	color:  #051C44;
+}
+
+#nav_menus {
+	 color:  #051C44;
+}
+
+#nav_menus_right {
+	 color:  #051C44;
+}
+
+#nav_menus:hover {
+	font-size: 1.5em;	
+	color:  #EABF00;
+}
+
+/* Remove the navbar's default margin-bottom and rounded borders */
+.navbar {
+	margin-bottom: 0;
+	border-radius: 0;
+	background-color: white;
+}
+
+.navbar-brand {
+	font-size: 28px;
+	padding-left: 25px;
+}
+
+.nav_item {
+	font-size: 20px;
+}
+
+/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+.row.content {
+	height: 700px;
+}
+
+/* Set gray background color and 100% height */
+.sidenav {
+	padding-top: 20px;
+	background-color: #051C44;
+	height: 100%;
+}
+
+/* Set black background color, white text and some padding */
+footer {
+	color: white;
+	padding: 15px;
+}
+
+/* On small screens, set height to 'auto' for sidenav and grid */
+@media screen and (max-width: 767px) {
+	.sidenav {
+		height: auto;
+		padding: 15px;
+	}
+	.row.content {
+		height: auto;
+	}
+}
+
+.main_btn_area {
+	margin-top: 4px;
+	text-align: center;
+}
+
+.main_btn {
+	background-color: #051C44;
+	color: #EABF00;
+}
+
+footer {
+	height: 200px;
+	background-color: black;
+	background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
+	background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+}
+
+.card {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	max-width: 300px;
+	margin: auto;
+	text-align: center;
+}
+
+.title {
+	color: grey;
+	font-size: 18px;
+}
+
+.card_btn {
+	border: none;
+	outline: 0;
+	display: inline-block;
+	padding: 8px;
+	color: white;
+	background-color: #000;
+	text-align: center;
+	cursor: pointer;
+	width: 100%;
+	font-size: 18px;
+}
+
+.card_btn:hover {
+	opacity: 0.7;
+}
+
+.column {
+	float: left;
+	width: 33.33%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.second_row {
+	margin-top: 25px;
+}
+
+.footer_items {
+	display: flex;
+	justify-content: space-between;
+}
+
+.footer_items>.col {
+	margin-top: 20px;
+}
+
+.carousel-inner>.item>img {
+	width: 100%;
+	height: 660px;
+}
+
+#explore_btn {
+	color: #EABF00;
+}
+
+#explore_btn:hover {
+	text-decoration: none;
+	color: red;
+}
+
+.six_items {
+	font-size: 0.7em;
+}

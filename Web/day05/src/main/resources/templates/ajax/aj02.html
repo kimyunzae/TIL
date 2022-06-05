@@ -1,0 +1,44 @@
+<meta charset="UTF-8">
+
+<style>
+	#result{
+		width: 500px; 
+		border: 2px solid red;
+	}
+</style>
+
+<script>
+	
+	function display(data){
+		var txt = '<h2>'+data+'</h2>';
+		$('#result').html(txt);
+	};
+	
+	function getdata(txt){
+		$.ajax({
+			url:'search',
+			data:{'s':txt},
+			success: function(data){
+				display(data);
+				
+			}
+		});
+	
+	};
+
+	$(document).ready(function(){
+		$('button').click(function() {
+			var txt = $('#txt').val();	// input #txt의 값을 가져와라 
+			getdata(txt);
+		});
+		
+	});
+</script>
+
+<h1>AJ02 Main</h1>
+<input type="text" id="txt">
+<button>GETDATA</button>
+<div id="result"></div>
+
+
+

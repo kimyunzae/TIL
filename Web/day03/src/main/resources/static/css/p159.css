@@ -1,0 +1,40 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Koulen&family=Oleo+Script+Swash+Caps:wght@700&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	
+}
+
+div {
+	width: 200px;
+	height: 200px;
+	border: 3px dashed red;	
+	border-radius: 30px 30px 0 0;
+	
+	/* margin: 20px 10px 5px 50px;	x-axis, y-axis */
+	/* margin: 20px 10px 5px 50px;	N W S E */
+	
+	margin: 20px;
+	padding: 10px;
+	
+	/* box size: 200px + 3px + 10px = 213px */
+	
+}
+
+	/* display: none, block, inline, inline-block */
+
+p {
+	/*	display: block; 	
+	visibility: hidden; keeps the space, but value hidden	*/
+	display: inline-block;
+	width: 100px;
+	font-family: 'Koulen', cursive;
+}
+
+span {
+	font-family: 'Oleo Script Swash Caps', cursive;
+}
+
+

@@ -1,0 +1,55 @@
+<meta charset="UTF-8">
+
+
+<style>
+
+#welcome {
+	font-size: 1.3em;
+}
+
+.bg-1 {
+	background-color:black; /* Green */
+	color: #E50815;
+}
+
+.bg-2 {
+	background-color: #141414; /* Dark Blue */
+	color: #ffffff;
+}
+
+.container-fluid {
+	height: 100%; 
+}
+
+.container-fluid > div > img {
+	margin: 30px;
+} 
+
+
+</style>
+
+<script>
+	
+</script>
+
+<div class="container-fluid bg-1 text-center">
+	<h3>Login Successful</h3>
+	<img src="../img/bird150.jpeg" class="img-circle" alt="Bird">
+	<h3 th:text="${rid}"></h3> 
+</div>
+
+<div class="container-fluid bg-2 text-center">
+	<h3>Choose Your Profile</h3>
+		<div>
+			<img src="../img/Acdc.png" class="img-circle" alt="Bird" width="180px" height="180px">
+			<img src="../img/Bonjovi.png" class="img-circle" alt="Bird" width="180px" height="180px">
+			<img src="../img/Guns.png" class="img-circle" alt="Bird" width="180px" height="180px">
+		</div>
+		
+		<div>
+			<img src="../img/Megadeth.png" class="img-circle" alt="Bird" width="180px" height="180px">
+			<img src="../img/Metallica.png" class="img-circle" alt="Bird" width="180px" height="180px">
+			<img src="../img/Slipknot.png" class="img-circle" alt="Bird" width="180px" height="180px">
+		</div>
+</div>
+

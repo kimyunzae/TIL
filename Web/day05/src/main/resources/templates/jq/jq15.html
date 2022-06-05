@@ -1,0 +1,42 @@
+<meta charset="UTF-8">
+<style>
+#imgs {
+	width: 400px;
+	height: 400px;
+}
+</style>
+<script>
+	$(document).ready(function() {
+		var imgs = [ 'img/poster1.jpeg', 'img/poster2.jpg', 'img/poster3.jpg' ];
+		var cnt = 0;
+		var auto = null;
+		var aa;
+
+		$('#back').click(function() {
+			cnt--;
+			$('#imgs').attr('src', imgs[Math.abs(cnt % imgs.length)]);
+		});
+		$('#auto').click(function() {
+			auto = setInterval(function() {
+				cnt++
+				$('#imgs').attr('src', imgs[Math.abs(cnt % imgs.length)]);
+			}, 500);
+		});
+		$('#stop').click(function() {
+			clearInterval(auto);
+		});
+		$('#for').click(function() {
+			cnt++;
+			$('#imgs').attr('src', imgs[Math.abs(cnt % imgs.length)]);
+		});
+		$('#imgs').attr('src', imgs[cnt]);
+	});
+</script>
+<h1>JQ10 Main</h1>
+
+<button id="back">Back</button>
+<button id="auto">Auto</button>
+<button id="stop">Stop</button>
+<button id="for">Forward</button>
+<hr>
+<img id="imgs">

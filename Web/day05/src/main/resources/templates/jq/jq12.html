@@ -1,0 +1,21 @@
+<meta charset="UTF-8">
+
+
+<script>
+$(document).ready(function() {
+	
+	var imgs = ['img/poster1.jpeg','img/poster2.jpg','img/poster3.jpg'];
+	var cnt = 0;
+	setInterval(function(){
+		$('#image').attr('src', imgs[cnt % imgs.length]);
+		$('h1').text(cnt);
+		cnt++;
+	
+	}, 1000);
+
+});
+</script>
+
+
+<h1>JQ12 Main</h1>
+<img id="image">

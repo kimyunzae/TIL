@@ -1,0 +1,77 @@
+<meta charset="UTF-8">
+
+<style>
+	#result {
+		width: 300px;
+		border: 2px solid red;
+	}
+
+	#result > #tb01 {
+		width:200px;
+		border: 2px solid blue; 
+	}
+	
+	#result > #tb01 > thead > tr > th {
+		border: 1px solid black;
+	}
+	
+	#result > #tb01 > tbody > tr > td {
+			border: 1px solid black;
+	}
+	
+</style>
+
+<script>
+function getdata() {
+	// var a = [1,2,3,4,5,6];	
+	
+	// JSON
+	var a = [
+		{id:'id01',name:'lee',age:10},
+		{id:'id02',name:'kim',age:20},
+		{id:'id03',name:'han',age:30},
+		{id:'id04',name:'shin',age:40},
+		{id:'id05',name:'koo',age:50},
+		];
+	
+	var txt = '';
+	
+	// for(var i = 0; i < a.length; i++) {
+	
+	txt += '<table id="tb01">';
+	
+	txt += '<thead>';
+	txt += '<tr>';
+	txt += '<th>' + 'id' + '</th>';
+	txt += '<th>' + 'name' + '</th>';
+	txt += '<th>' + ' age' + '</th>';
+	txt += '</tr>';
+	txt += '</thead>';
+	
+	txt += '<tbody>';
+	for(var i in a) {
+		//txt += '<h2>' + a[i] + '</h2>';
+
+		txt += '<tr>'; 
+		txt += '<td>' + a[i].id + '</td>';
+		txt += '<td>' + a[i].name + '</td>'; 	
+		txt += '<td>' + a[i].age + '</td>'; 	    
+		txt += '</tr>';
+	};
+	
+	txt += '</tbody>';
+	txt += '</table>';
+
+	
+	document.querySelector('#result').innerHTML = txt;
+	
+};
+
+</script>
+
+
+<h1>JS04 Main</h1>
+<h2>
+	<a href="#" onclick="getdata();">Click</a>
+</h2>
+<div id="result"></div>
