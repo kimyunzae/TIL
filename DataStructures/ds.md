@@ -38,3 +38,42 @@
 - backtracking algorithms (maze, file directories)
 - calling functions (call stack)
 
+
+### Queue
+-  Queue = FIFO data structure (First-In First-Out) ex) a line of people
+- A collection designed for holding elements prior to processing 
+- Linear data structure
+- add = enqueue, offer()
+- remove = dequeue, poll()
+
+```java
+    import java.util.Queue;
+    import java.util.LinkedList;
+
+    public class Main {
+
+        public static void main(String[] args) {
+            
+            Queue<String> queue = new LinkedList<String>();
+            
+            System.out.println(queue.isEmpty()); 
+            //returns boolean type
+            
+            queue.offer("Karen");
+            queue.offer("Chad");
+            queue.offer("Steve");
+            queue.offer("Harold");
+            
+            // System.out.println(queue.peek());
+            queue.poll();
+            queue.poll();
+            queue.poll();
+
+
+            System.out.println(queue);
+            System.out.println(queue.isEmpty());
+        }
+
+    }
+
+```
