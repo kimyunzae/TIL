@@ -32,7 +32,7 @@
 
 **1. pom.xml에 library 추가**
 
-- servlet, tomcat, json
+
 
   ```java
       <!-- @Inject -->
@@ -84,7 +84,7 @@
   spring.datasource.url=jdbc:mysql://127.0.0.1:3306/shopdb?serverTimezone=Asia/Seoul
   
   spring.datasource.username=admin1
-  spring.datasource.password=Luke22240@
+  spring.datasource.password=111111
   
   mybatis.type-aliases-package=com.multi.vo
   mybatis.mapper-locations=com/multi/mybatis/*.xml
