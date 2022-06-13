@@ -1,4 +1,4 @@
-package com.multi.cust;
+package com.multi.main;
 
 import java.util.List;
 
@@ -7,20 +7,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import com.multi.biz.CustBiz;
+import com.multi.biz.MainBiz;
 import com.multi.vo.CustVO;
 
 @SpringBootTest
-class CustSelectOneTests {
+class CustCountTests {
 	
 	@Autowired
-	CustBiz biz;
+	MainBiz biz;
 	
 	@Test
 	void contextLoads() {
-		CustVO obj = null;
+		int count;
 		try {
-			obj = biz.get("id999");
-			System.out.println(obj);
+			count = biz.getCustCnt();
+			System.out.println(count);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

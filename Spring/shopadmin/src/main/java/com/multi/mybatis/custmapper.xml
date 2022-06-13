@@ -14,7 +14,7 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 		INSERT INTO CUST VALUES (#{id},#{name},#{addr},SYSDATE(), #{pwd})
 	</insert>
 	<update id="update" parameterType="custVO">
-		UPDATE CATE SET NAME=#{name},ADDR=#{addr},PWD=#{PWD} WHERE ID=#{id}
+		UPDATE CUST SET NAME=#{name},ADDR=#{addr},PWD=#{pwd} WHERE ID=#{id}
 	</update>
 	<delete id="delete" parameterType="String">
 		DELETE FROM CUST WHERE ID=#{id}

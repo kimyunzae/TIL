@@ -31,7 +31,7 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 		GROUP BY catename
 	</select>
 	<insert id="insert" parameterType="productVO">
-		INSERT INTO PRODUCT VALUES (NULL, #{name},#{price},curdate(),#{cid},#{imgname})
+		INSERT INTO PRODUCT VALUES (NULL, #{name},#{price},curdate(),#{cid},#{imgname},#{catename})
 	</insert>
 	<update id="update" parameterType="productVO">
 		UPDATE PRODUCT SET NAME=#{name},PRICE=#{price},CID=#{cid},IMGNAME=#{imgname} 

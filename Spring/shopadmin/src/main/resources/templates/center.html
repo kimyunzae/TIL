@@ -1,4 +1,64 @@
 
+<style>
+	#container{
+		width: 500px;
+		height: 300px; 
+	}
+
+</style>
+
+<script>
+	function display(gdata) {
+		Highcharts.chart('container', {
+		    chart: {
+		        plotBackgroundColor: null,
+		        plotBorderWidth: null,
+		        plotShadow: false,
+		        type: 'pie'
+		    },
+		    title: {
+		        text: 'Browser market shares in January, 2018'
+		    },
+		    tooltip: {
+		        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+		    },
+		    accessibility: {
+		        point: {
+		            valueSuffix: '%'
+		        }
+		    },
+		    plotOptions: {
+		        pie: {
+		            allowPointSelect: true,
+		            cursor: 'pointer',
+		            dataLabels: {
+		                enabled: true,
+		                format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+		            }
+		        }
+		    },
+		    series: [{
+		        name: 'Products',
+		        data: gdata.data
+		    }]
+		    
+		});
+	};
+
+	function getdata() {
+		$.ajax({
+			url:'/chart1',
+			success: function(data){
+				display(data);
+			}
+		});
+	};
+
+	$(document).ready(function(){
+		getdata();
+	});
+
+</script>
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
@@ -17,8 +77,10 @@
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                Earnings (Monthly)</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
+                                Customer Count</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                            	<span th:text="${ccnt}"></span>
+                            </div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -35,8 +97,10 @@
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                Earnings (Annual)</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div>
+                                Product Count</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                            	<span th:text="${pcnt}"></span>
+                            </div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
@@ -93,8 +157,34 @@
             </div>
         </div>
     </div>
+    
+  <!-- Content Row -->
+    
+    <div class="row">
 
-    <!-- Content Row -->
+    <!-- Area Chart -->
+    <div class="col-xl-12 col-lg-12">
+        <div class="card shadow mb-4">
+            <!-- Card Header - Dropdown -->
+            <div
+                class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold text-primary">Earnings Overview</h6>
+              
+            </div>
+            <!-- Card Body -->
+             <div class="card-body">
+                 <div id="container">
+                 
+                 </div>
+             </div>
+         </div>
+     </div>
+     <!-- Area Chart End -->
+     
+	</div>  
+
+   
+              
 
     
 

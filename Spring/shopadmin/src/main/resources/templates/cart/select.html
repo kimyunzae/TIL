@@ -1,0 +1,42 @@
+
+<!-- Page Heading -->
+<h1 class="h3 mb-2 text-gray-800"> Cart Tables</h1>
+
+<!-- DataTales Example -->
+<div class="card shadow mb-4">
+
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>                
+                    <tr>
+                        <th>ID</th>
+                        <th>CUST ID</th>
+                        <th>PRODUCT ID</th>
+                        <th>PRODUCT NAME</th>
+                        <th>PRODUCT PRICE</th>
+                        <th>CATEGORY</th>
+                        <th>REGDATE</th>
+                        <th>COUNT</th>
+                    </tr>
+                </thead>
+               
+                <tbody>
+                    <tr th:each="c : ${clist}">
+                        <td th:text="${c.id}"></td>
+                        <td th:text="${c.uid}">pwd01</td>
+                        <td th:text="${c.pid}">Edinburgh</td>
+                        <td th:text="${c.pname}">Seoul</td>
+                        <td th:text="${c.pprice}">Seoul</td>
+                        <td th:text="${c.catename}">Seoul</td>
+                        <td th:text="${#dates.format(c.regdate,'yyyy/MM/dd')}">2011/04/25</td>
+                    	<td th:text="${c.cnt}">Seoul</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
